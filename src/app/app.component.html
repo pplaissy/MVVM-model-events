@@ -1,0 +1,20 @@
+<div>
+    <p-toast />
+    <app-toolbar [model]="model.toolbarVM" />
+    <p-splitter [style]="{ height: '300px' }" styleClass="mb-5">
+        <ng-template pTemplate>
+            <div class="col flex align-items-center justify-content-center">
+                @if (model.leftPanelVM) {
+                    <app-left-panel [model]="model.leftPanelVM" />
+                }
+            </div>
+        </ng-template>
+        <ng-template pTemplate>
+            <div class="col flex align-items-center justify-content-center">
+                @if (model.rightPanelVm) {
+                    <app-right-panel [model]="model.rightPanelVm" />
+                }
+            </div>
+        </ng-template>
+    </p-splitter>
+</div>

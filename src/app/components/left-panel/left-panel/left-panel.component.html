@@ -1,0 +1,14 @@
+@if (model) {
+    <div class="flex flex-column gap-5">
+        <h3>Left panel</h3>
+        <div>
+            <span>Last message from right panel : </span>
+            <span><strong>{{model.lastMessage}}</strong></span>
+        </div>
+        <p-floatLabel>
+            <input pInputText id="leftMessage" [(ngModel)]="model.message" />
+            <label for="leftMessage">Something to say</label>
+        </p-floatLabel>
+        <p-button label="Say it !" [disabled]="model.message.length === 0" (onClick)="model.onSayButtonClick()"/>
+    </div>
+}
