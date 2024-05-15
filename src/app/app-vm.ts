@@ -1,7 +1,7 @@
 import { MessageService } from "primeng/api";
-import { ToolbarVM } from "./components/toolbar/model/toolbar-vm";
 import { LeftPanelVM } from "./components/left-panel/left-panel-vm";
 import { RightPanelVM } from "./components/right-panel/right-panel-vm";
+import { ToolbarVM } from "./components/toolbar/toolbar-vm";
 
 export class AppVM {
     messageService: MessageService;

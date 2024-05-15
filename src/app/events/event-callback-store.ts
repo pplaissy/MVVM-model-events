@@ -12,8 +12,10 @@ export class EventCallbackStore {
 
         const process = this.getProcess(listenerId, eventName);
         if (process) {
+            // if the process already exists, replace the callback method
             process.method = method;
         } else {
+            // else create a new event process
             this.processes.push(new EventProcess(listenerId, eventName, method));
             logger.log(`👂${listenerId} is now listening to ${eventName}`);
         }

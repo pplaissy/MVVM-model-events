@@ -1,7 +1,7 @@
 import { MenuItem } from "primeng/api";
-import { EventListener } from "../../../events/event-listener";
-import { readableUUID } from "../../../events/readable-uuid";
-import { AppEventsEnum } from "../../../events/app-events-enum";
+import { AppEventsEnum } from "../../events/app-events-enum";
+import { readableUUID } from "../../events/readable-uuid";
+import { EventListener } from "../../events/event-listener";
 
 export class ToolbarVM extends EventListener {
     menuItems: MenuItem[];

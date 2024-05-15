@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ToolbarVM } from '../model/toolbar-vm';
+import { ToolbarVM } from './toolbar-vm';
 import { MenubarModule } from 'primeng/menubar';
 
 @Component({

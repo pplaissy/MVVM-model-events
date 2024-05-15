@@ -8,13 +8,14 @@ export abstract class ModelEventLifeCycle implements OnChanges, OnDestroy {
     ngOnChanges(changes: SimpleChanges): void {
         const modelChanges = changes["model"];
         if (modelChanges && !modelChanges.firstChange && modelChanges.previousValue) {
+            // remove the listeners if a new instance of the model is created
             (modelChanges.previousValue as IEventListener).removeListeners();
         }
     }
     
     ngOnDestroy(): void {
-        // Supprime les listeners
-        // Dans certains cas, le model peut avoir été détruit par le model parent ainsi que les listeners
+        // remove the listeners
+        // in some cases, model and listeners could have been already destroyed par the parent model
         if (this.model) {
             this.model.removeListeners();
         }

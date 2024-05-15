@@ -4,7 +4,7 @@ import { Lifecycle, injectable, scoped } from "tsyringe";
 @scoped(Lifecycle.ContainerScoped)
 export class LoggerService {
   /**
-   * Jamais utilisé en environnement de production
+   * Never used in prod context
    */
   group(msg: any) {
     if (this.loggable(false)) {
@@ -13,7 +13,7 @@ export class LoggerService {
   }
 
   /**
-   * Jamais utilisé en environnement de production
+   * Never used in prod context
    */
   groupEnd() {
     if (this.loggable(false)) {
@@ -22,9 +22,9 @@ export class LoggerService {
   }
 
   /**
-   * Affiche un message d'information dans la console
-   * @param msg Le message à afficher dans la console
-   * @param forceInProd true si on veut que le message soit affiché en environnement de production. false par défaut
+   * Display an information message in the console
+   * @param msg The message to display
+   * @param forceInProd true if we want the message to be displayed in prod context. false by default
    */
   log(msg: any, forceInProd: boolean = false) {
     if (this.loggable(forceInProd)) {
@@ -33,9 +33,9 @@ export class LoggerService {
   }
 
   /**
-   * Affiche un message d'erreur dans la console
-   * @param msg Le message à afficher dans la console
-   * @param forceInProd true si on veut que le message soit affiché en environnement de production. Par défaut les messages d'erreur sont toujours affichés
+   * Display an information message in the console
+   * @param msg The message to display
+   * @param forceInProd true if we want the message to be displayed in prod context. false by default
    */
   error(msg: any, forceInProd: boolean = true) {
     if (this.loggable(forceInProd)) {
@@ -44,9 +44,9 @@ export class LoggerService {
   }
 
   /**
-   * Affiche un message d'avertissement dans la console
-   * @param msg Le message à afficher dans la console
-   * @param forceInProd true si on veut que le message soit affiché en environnement de production. false par défaut
+   * Display an information message in the console
+   * @param msg The message to display
+   * @param forceInProd true if we want the message to be displayed in prod context. false by default
    */
   warn(msg: any, forceInProd: boolean = false) {
     if (this.loggable(forceInProd)) {
@@ -55,8 +55,8 @@ export class LoggerService {
   }
 
   /**
-   * Affiche un message d'erreur lié aux listeners. N'est pas affiché en environnement de production
-   * @param msg Le message à afficher dans la console
+   * Display an error message relative to listeners. Not displayed in prod context
+   * @param msg The message to display
    */
   missingListener(msg: any) {
     this.error(`${msg} n'est pas écouté`, false);
